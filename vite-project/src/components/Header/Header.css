@@ -1,0 +1,24 @@
+.header__container {
+  display: flex;
+}
+
+.header__logo {
+  width: 90px;
+  height: 40px;
+  margin-right: 24px;
+}
+
+.header__date {
+  flex: 1;
+  margin: 0;
+  align-self: center;
+}
+
+.header__user-info {
+  margin: 0 0 0 12px;
+  align-self: center;
+}
+
+.header__avatar {
+  margin-left: 12px;
+}

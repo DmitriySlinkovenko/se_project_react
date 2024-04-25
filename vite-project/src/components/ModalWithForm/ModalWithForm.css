@@ -1,0 +1,14 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.form__weather-type_selector {
+  display: flex;
+  flex-direction: column;
+}
+
+.form__close-btn {
+  position: absolute;
+}

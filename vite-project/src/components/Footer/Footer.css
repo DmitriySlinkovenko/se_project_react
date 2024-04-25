@@ -1,0 +1,11 @@
+.footer__container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer__signature {
+  margin: 0;
+}
+.footer__date {
+  margin: 0;
+}

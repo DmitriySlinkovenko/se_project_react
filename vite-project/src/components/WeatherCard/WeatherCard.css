@@ -1,0 +1,13 @@
+.weather-card__container {
+  margin: 28px 0 40px;
+
+  display: flex;
+  align-items: center;
+}
+
+.weather-card__temperature {
+  margin: 0;
+  padding: 20px 16px;
+  font-size: 36px;
+  line-height: 1.2;
+}
