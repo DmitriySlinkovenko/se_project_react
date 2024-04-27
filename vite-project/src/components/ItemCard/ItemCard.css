@@ -1,0 +1,32 @@
+.item-card__container {
+  width: 325px;
+  height: 328px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 20px;
+  text-align: center;
+  position: relative;
+  list-style: none;
+}
+
+.item-card__image {
+  width: 325px;
+  height: 328px;
+  border-radius: 20px;
+  border: none;
+}
+
+.item-card__title {
+  position: absolute;
+  display: inline-block;
+  padding: 2px 12px;
+  margin: 0;
+  background-color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+  top: 15px;
+  left: 50%;
+  transform: translate(-50%, 0);
+}

@@ -1,6 +1,11 @@
 .weather-card__container {
   margin: 28px 0 40px;
-
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: right;
+  height: 80px;
+  width: 100%;
+  border-radius: 12px;
   display: flex;
   align-items: center;
 }

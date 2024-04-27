@@ -1,10 +1,18 @@
-function ItemCard(prop) {
+import "./ItemCard.css";
+
+function ItemCard({ props, handleCardClick }) {
   return (
-    <div>
-      <img src={prop.image} alt={prop.title} />
-      <p>{prop.title}</p>
-      <p></p>
-    </div>
+    <li className="item-card__container">
+      <p className="item-card__title">{props.name}</p>
+      <img
+        src={props.link}
+        alt={props.name}
+        className="item-card__image"
+        onClick={() => {
+          handleCardClick(props);
+        }}
+      />
+    </li>
   );
 }
 export default ItemCard;
