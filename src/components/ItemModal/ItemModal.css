@@ -1,4 +1,4 @@
-.modal {
+.item-modal {
   position: fixed;
   top: 0;
   left: 0;
@@ -22,7 +22,7 @@
   z-index: 1;
 }
 
-.modal_opened {
+.item-modal_opened {
   visibility: visible;
 }
 
@@ -39,7 +39,7 @@
   text-align: left;
 }
 
-.preview__close-btn {
+.item-modal__close-btn {
   position: absolute;
   background-image: url(../../assets/close-btn-white.png);
   background-color: transparent;
