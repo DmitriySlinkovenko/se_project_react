@@ -1,6 +1,11 @@
 import "./ItemModal.css";
 
-function ItemModal({ isOpen, selectedCard, handleModalClose }) {
+function ItemModal({
+  isOpen,
+  selectedCard,
+  handleModalClose,
+  handleDeleteItem,
+}) {
   return (
     <div className={`${isOpen ? "item-modal item-modal_opened" : "modal"}`}>
       <div className="item-modal__container">
@@ -10,8 +15,11 @@ function ItemModal({ isOpen, selectedCard, handleModalClose }) {
           id="item-modal__close-btn"
           onClick={handleModalClose}
         ></button>
+        <button className="item-modal__delete-btn" onClick={handleDeleteItem}>
+          Delete Item
+        </button>
         <img
-          src={selectedCard.link}
+          src={selectedCard.imageUrl}
           alt={selectedCard.name}
           className="item-modal__image"
         />

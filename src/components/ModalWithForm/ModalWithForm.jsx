@@ -1,4 +1,3 @@
-import { Children } from "react";
 import "./ModalWithForm.css";
 
 function ModalWithForm({
@@ -7,11 +6,12 @@ function ModalWithForm({
   handleModalClose,
   submitText,
   title,
+  handleSubmitForm,
 }) {
   return (
     <div className={`${isOpen ? "modal modal_opened" : "modal"}`}>
       <div className="modal__container">
-        <form className="form">
+        <form className="form" onSubmit={handleSubmitForm}>
           <h3 className="form__title ">{title}</h3>
           <button
             type="button"

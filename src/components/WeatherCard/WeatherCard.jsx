@@ -1,10 +1,14 @@
 import "./WeatherCard.css";
+import { CurrentTemperatureUnitContext } from "../../contexts/CurrentTemperatureUnitContext";
+import { useContext } from "react";
 
 function WeatherCard({ weatherData }) {
-  const tempDisplay = `${weatherData.temp.F} °F`;
+  const tempDisplayF = `${weatherData.temp.F} °F`;
+  const tempDisplayC = `${((weatherData.temp.F - 32) / (9 / 5)).toFixed(1)} °C`;
   const condition = weatherData.condition;
   const weatherId = weatherData.id;
   const isDay = weatherData.isDay;
+  const { currentTemperatureUnit } = useContext(CurrentTemperatureUnitContext);
 
   function handleBackgroundImage(condition, weatherId, isDay) {
     const dayPaths = {
@@ -43,7 +47,9 @@ function WeatherCard({ weatherData }) {
         )})`,
       }}
     >
-      <p className="weather-card__temperature">{tempDisplay}</p>
+      <p className="weather-card__temperature">
+        {currentTemperatureUnit === "F" ? tempDisplayF : tempDisplayC}
+      </p>
     </section>
   );
 }

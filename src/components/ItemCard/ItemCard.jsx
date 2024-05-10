@@ -5,7 +5,7 @@ function ItemCard({ props, handleCardClick }) {
     <li className="item-card__container">
       <p className="item-card__title">{props.name}</p>
       <img
-        src={props.link}
+        src={props.imageUrl}
         alt={props.name}
         className="item-card__image"
         onClick={() => {

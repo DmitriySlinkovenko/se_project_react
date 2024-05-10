@@ -59,3 +59,17 @@
   line-height: 1.2;
   text-align: left;
 }
+
+.item-modal__delete-btn {
+  color: #ff4d00;
+  font-size: 20px;
+  line-height: 1.2;
+  font-family: "Cabinet Grotesk";
+  font-weight: 700;
+  position: absolute;
+  border: none;
+  background-color: transparent;
+  right: 32px;
+  bottom: 68px;
+  padding: 0;
+}

@@ -1,0 +1,67 @@
+.toggle-switch {
+  display: flex;
+  position: relative;
+  cursor: pointer;
+  margin: auto 20px auto 0px;
+}
+
+.toggle-switch__button {
+  border-radius: 20px;
+  border: 2px solid rgba(126, 126, 126, 1);
+  width: 56px;
+  height: 28px;
+
+  appearance: none;
+}
+
+.toggle-switch__button:hover {
+  border-color: black;
+}
+
+.switch__slider {
+  border-radius: 20px;
+  width: 28px;
+  height: 28px;
+  background-color: black;
+  color: white;
+  text-align: center;
+  position: absolute;
+  transition: 200ms linear;
+}
+
+.switch__slider-F {
+  top: 3px;
+  left: 4px;
+}
+
+.switch__slider-C {
+  top: 3px;
+  left: 32px;
+}
+
+.switch__active {
+  color: white;
+  cursor: pointer;
+}
+
+.temp-unit-F {
+  position: absolute;
+  bottom: -5px;
+  left: 14px;
+  color: white;
+  font-size: 14px;
+  line-height: 1.2;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.temp-unit-C {
+  position: absolute;
+  bottom: -5px;
+  right: 12px;
+  color: white;
+  font-size: 14px;
+  line-height: 1.2;
+  font-weight: 700;
+  cursor: pointer;
+}

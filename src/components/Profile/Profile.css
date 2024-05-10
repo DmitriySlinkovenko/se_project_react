@@ -1,0 +1,5 @@
+.profile {
+  display: flex;
+  flex-wrap: nowrap;
+  margin: 47px auto 86px;
+}

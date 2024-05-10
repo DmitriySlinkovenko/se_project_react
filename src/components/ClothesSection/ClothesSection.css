@@ -1,0 +1,27 @@
+.section__container {
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  max-width: 1021px;
+  margin: 16px 0 0 116px;
+}
+
+.add__new-item {
+  height: 25px;
+  margin-bottom: 16px;
+  border: none;
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24.8px;
+  text-align: left;
+}
+
+.current__items {
+  margin: 0 20px 16px 0;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: left;
+}
