@@ -6,7 +6,9 @@ export default function ClothesSection({
   handleCardClick,
   clothingItems,
   handleAddClick,
+  weatherData,
 }) {
+  const weather = weatherData.type;
   return (
     <section className="section__container">
       <p className="current__items">Your Items</p>
@@ -15,15 +17,15 @@ export default function ClothesSection({
       </button>
       <div className="clothes__section">
         <ul className="cards__list">
-          {clothingItems.map((item) => {
-            return (
+          {clothingItems
+            .filter((item) => item.weather == weather)
+            .map((item) => (
               <ItemCard
                 key={item._id}
                 props={item}
                 handleCardClick={handleCardClick}
               />
-            );
-          })}
+            ))}
         </ul>
       </div>
     </section>

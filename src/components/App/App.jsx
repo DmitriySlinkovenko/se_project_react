@@ -68,8 +68,8 @@ function App() {
 
   function handleAddItemSubmit(data) {
     addItem(data)
-      .then(() => {
-        setClothingItems([data, ...clothingItems]);
+      .then((item) => {
+        setClothingItems([item, ...clothingItems]);
       })
       .then(handleModalClose)
       .catch(console.error);
@@ -110,6 +110,7 @@ function App() {
                 handleCardClick={handleCardClick}
                 clothingItems={clothingItems}
                 handleAddClick={handleAddClick}
+                weatherData={weatherData}
               />
             }
           />

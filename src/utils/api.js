@@ -17,14 +17,14 @@ function addItem({ name, weather, imageUrl }) {
       weather,
       imageUrl,
     }),
-  });
+  }).then((res) => checkResponse(res));
 }
 
 function removeItem(id) {
   return fetch(`${baseUrl}/items/${id}`, {
     method: "DELETE",
     headers: { "Content-Type": "application/json" },
-  });
+  }).then((res) => checkResponse(res));
 }
 
-export { getItems, addItem, removeItem };
+export { getItems, addItem, removeItem, checkResponse };
