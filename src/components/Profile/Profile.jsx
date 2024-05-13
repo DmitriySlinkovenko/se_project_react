@@ -7,7 +7,6 @@ export default function Profile({
   handleCardClick,
   clothingItems,
   handleAddClick,
-  weatherData,
 }) {
   return (
     <div className="profile">
@@ -16,7 +15,6 @@ export default function Profile({
         handleCardClick={handleCardClick}
         clothingItems={clothingItems}
         handleAddClick={handleAddClick}
-        weatherData={weatherData}
       />
     </div>
   );
