@@ -61,6 +61,7 @@
   color: white;
   margin-top: 24px;
   padding: 8px 12px;
+  cursor: pointer;
 }
 
 .form__submit-btn:hover {
@@ -86,8 +87,9 @@
 
 .modal__container {
   width: 496px;
-  max-height: 436px;
+  max-height: 500px;
   border: 1px solid black;
+  box-sizing: border-box;
   padding: 28px 28px 36px;
   background-color: #ffffff;
   border-radius: 20px;
