@@ -94,7 +94,7 @@ function App() {
         setClothingItems(data);
       })
       .catch((err) => console.error(err));
-  }, [clothingItems]);
+  }, []);
 
   function handleAddItemSubmit(data) {
     const jwt = getToken();
@@ -153,9 +153,10 @@ function App() {
     const token = getToken();
     updateProfile(token, { name, avatar })
       .then((res) => {
-        setCurrentUser(res.user);
+        console.log(res);
+        setCurrentUser(res);
+        handleModalClose();
       })
-      .then(handleModalClose)
       .catch((err) => console.log(err));
   };
 
