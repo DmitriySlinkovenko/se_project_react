@@ -27,7 +27,12 @@ function RegisterModal({ isOpen, onCloseModal, handleSignUp }) {
   function handleSubmitForm(e) {
     e.preventDefault();
     handleSignUp({ email, password, name, avatar });
+    setEmail("");
+    setPassword("");
+    setName("");
+    setAvatar("");
   }
+
   return (
     <>
       <ModalWithForm

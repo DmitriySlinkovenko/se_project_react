@@ -16,6 +16,8 @@ function LoginFormModal({ isOpen, onCloseModal, handleLogin }) {
   function handleSubmitForm(e) {
     e.preventDefault();
     handleLogin({ email, password });
+    setEmail("");
+    setPassword("");
   }
   return (
     <>

@@ -89,18 +89,20 @@ function App() {
   }, []);
 
   useEffect(() => {
-    getItems().then((data) => {
-      setClothingItems(data);
-    });
-  }, []);
+    getItems()
+      .then((data) => {
+        setClothingItems(data);
+      })
+      .catch((err) => console.error(err));
+  }, [clothingItems]);
 
   function handleAddItemSubmit(data) {
     const jwt = getToken();
     addItem(data, jwt)
       .then((item) => {
         setClothingItems([item, ...clothingItems]);
+        handleModalClose();
       })
-      .then(handleModalClose)
       .catch(console.error);
   }
 
@@ -141,9 +143,7 @@ function App() {
   const handleSignUp = ({ email, name, avatar, password }) => {
     signUp({ email, name, avatar, password })
       .then(() => {
-        navigate("/profile/me");
-        setIsLoggedIn(true);
-        setCurrentUser({ email, name, avatar });
+        handleLogin({ email, password });
       })
       .then(handleModalClose)
       .catch((err) => console.error(err));
@@ -223,7 +223,7 @@ function App() {
               }
             />
             <Route
-              path="/profile/me"
+              path="/profile"
               element={
                 <ProtectedRoute isLoggedIn={isLoggedIn}>
                   <Profile

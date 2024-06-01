@@ -1,9 +1,14 @@
+.clothes__section-heading {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
 .section__container {
   margin: 0;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: wrap;
-  max-width: 1021px;
   margin: 16px 0 0 116px;
 }
 
@@ -14,7 +19,7 @@
   color: rgba(0, 0, 0, 0.6);
   font-size: 20px;
   font-weight: 700;
-  line-height: 24.8px;
+  line-height: 1.2;
   text-align: left;
 }
 
@@ -24,4 +29,8 @@
   font-weight: 700;
   line-height: 1.2;
   text-align: left;
+}
+
+.cards__list {
+  max-width: 1021px;
 }

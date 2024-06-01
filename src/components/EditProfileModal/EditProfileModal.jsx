@@ -22,6 +22,8 @@ export default function EditProfileModal({
   function handleEditProfile(e) {
     e.preventDefault();
     handleEditProfileSubmit({ name, avatar });
+    setName("");
+    setAvatar("");
   }
   return (
     <>
