@@ -37,10 +37,10 @@ function Header({
         + Add Clothes
       </button>
 
-      <Link to="/profile/me" className="header__user-info">
+      <Link to="/profile" className="header__user-info">
         {currentUser.name}
       </Link>
-      <Link to="/profile/me">
+      <Link to="/profile">
         <img
           src={currentUser.avatar}
           className="header__avatar"
