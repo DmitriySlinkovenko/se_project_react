@@ -9,7 +9,7 @@ Search for the current weather conditions in a specific location
 Toggle between Fahrenheit and Celsius temperature units
 Display the weather data in a user-friendly format
 
-### Technologies and Techniques
+## Technologies and Techniques
 
 - React
 - Vite
@@ -17,6 +17,10 @@ Display the weather data in a user-friendly format
 - CSS
 - JavaScript
 - HTML
+
+## Back End
+
+Link to my back-end repo : https://github.com/DmitriySlinkovenko/se_project_express
 
 ## GitHub Pages
 

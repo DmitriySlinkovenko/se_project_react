@@ -26,7 +26,7 @@ function RegisterModal({ isOpen, onCloseModal, handleSignUp }) {
 
   function handleSubmitForm(e) {
     e.preventDefault();
-    handleSignUp({ name, email, password, avatar });
+    handleSignUp({ email, password, name, avatar });
   }
   return (
     <>
@@ -40,7 +40,7 @@ function RegisterModal({ isOpen, onCloseModal, handleSignUp }) {
         <label className="form__label">
           Email*
           <input
-            type="email"
+            type="text"
             name="email"
             id="register-email"
             onChange={handleEmailChange}
@@ -74,6 +74,8 @@ function RegisterModal({ isOpen, onCloseModal, handleSignUp }) {
             placeholder="Name"
             required={true}
             value={name}
+            minLength={2}
+            maxLength={30}
           />
         </label>
         <label className="form__label">

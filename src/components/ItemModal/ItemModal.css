@@ -52,7 +52,7 @@
   top: 26px;
 }
 
-.item-modal__deascription {
+.item-modal__description {
   margin: 0 0 0 32px;
   font-size: 20px;
   font-weight: 700;
@@ -72,4 +72,12 @@
   right: 32px;
   bottom: 68px;
   padding: 0;
+}
+
+.item-modal__delete-btn_hidden {
+  opacity: 0;
+}
+
+.item-modal__delete-btn_visible {
+  opacity: 1;
 }

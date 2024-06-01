@@ -13,20 +13,37 @@
   height: 328px;
   border-radius: 20px;
   border: none;
+  object-fit: cover;
 }
 
 .item-card__title {
-  position: absolute;
+  position: relative;
   display: inline-block;
   padding: 2px 12px;
-  margin: 0;
+  margin: 0 auto;
   background-color: #fff;
   font-size: 16px;
   font-weight: 700;
   line-height: 1.2;
   color: rgba(0, 0, 0, 0.6);
   z-index: 1;
-  top: 15px;
-  left: 50%;
-  transform: translate(-50%, 0);
+  bottom: 322px;
+}
+
+.item-card__like-btn {
+  background-image: url(../../assets/State=Default.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: transparent;
+  width: 18px;
+  height: 15px;
+  border: none;
+  position: relative;
+  bottom: 322px;
+  margin-left: 10px;
+}
+
+.item-card__like-btn_liked {
+  background-image: url(../../assets/State=Liked.png);
 }

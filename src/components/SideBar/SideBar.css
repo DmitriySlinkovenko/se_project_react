@@ -1,13 +1,17 @@
 .sidebar {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   margin: 0;
+  max-width: 235px;
+  max-height: 140px;
 }
 
 .sidebar__avatar {
   width: 56px;
   height: 56px;
-  margin: 0 16px 0 0;
+  margin: 0 16px 24px 0;
+  border-radius: 50%;
 }
 
 .sidebar__username {
@@ -17,4 +21,13 @@
   height: 25px;
   margin-top: 16px;
   width: 162px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.button__container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }

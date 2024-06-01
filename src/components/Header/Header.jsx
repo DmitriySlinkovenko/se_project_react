@@ -11,6 +11,7 @@ function Header({
   handleAddClick,
   handleLoginClick,
   handleRegisterClick,
+  isLoggedIn,
 }) {
   const currentUser = useContext(CurrentUserContext);
   const currentDate = new Date().toLocaleString("default", {
@@ -18,7 +19,7 @@ function Header({
     day: "numeric",
   });
 
-  return (
+  return isLoggedIn ? (
     <header className="header__container">
       <Link to="/">
         <img src={headerLogo} alt="Header logo" className="header__logo" />
@@ -27,6 +28,7 @@ function Header({
         {currentDate}, {weatherData.city}
       </p>
       <ToggleSwitch />
+
       <button
         type="button"
         id="add__card-btn"
@@ -36,19 +38,33 @@ function Header({
         + Add Clothes
       </button>
 
-      <button className="sign-up__button" onClick={handleRegisterClick}>
+      <Link to="/profile/me" className="header__user-info">
+        {currentUser.name}
+      </Link>
+      <Link to="/profile/me">
+        <img
+          src={currentUser.avatar}
+          className="header__avatar"
+          alt="User Avatar"
+        />
+      </Link>
+    </header>
+  ) : (
+    <header className="header__container">
+      <Link to="/">
+        <img src={headerLogo} alt="Header logo" className="header__logo" />
+      </Link>
+      <p className="header__date">
+        {currentDate}, {weatherData.city}
+      </p>
+      <ToggleSwitch />
+
+      <button className="button" onClick={handleRegisterClick}>
         Sign Up
       </button>
-      <button className="sign-up__button" onClick={handleLoginClick}>
+      <button className="button" onClick={handleLoginClick}>
         Log In
       </button>
-
-      <Link to="/profile" className="header__user-info">
-        {"Dmitriy"}
-      </Link>
-      <Link to="/profile">
-        <img src={userAvatar} className="header__avatar" alt="User Avatar" />
-      </Link>
     </header>
   );
 }
