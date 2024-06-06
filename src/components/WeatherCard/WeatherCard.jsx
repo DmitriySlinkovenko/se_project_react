@@ -1,6 +1,18 @@
 import "./WeatherCard.css";
 import { CurrentTemperatureUnitContext } from "../../contexts/CurrentTemperatureUnitContext";
 import { useContext } from "react";
+import cloudy from "../../assets/cloudy.png";
+import fog from "../../assets/fog.png";
+import nightCloudy from "../../assets/night-cloudy.png";
+import nightFog from "../../assets/night-fog.png";
+import nightRain from "../../assets/night-rain.png";
+import nightSnow from "../../assets/night-snow.png";
+import nightStorm from "../../assets/night-storm.png";
+import night from "../../assets/night.png";
+import rain from "../../assets/rain.png";
+import snow from "../../assets/snow.png";
+import storm from "../../assets/storm.png";
+import sunny from "../../assets/sunny.png";
 
 function WeatherCard({ weatherData }) {
   const tempDisplayF = `${weatherData.temp.F} °F`;
@@ -12,21 +24,21 @@ function WeatherCard({ weatherData }) {
 
   function handleBackgroundImage(condition, weatherId, isDay) {
     const dayPaths = {
-      clouds: "../src/assets/cloudy.png",
-      clear: "../src/assets/sunny.png",
-      snow: "../src/assets/snow.png",
-      rain: "../src/assets/rain.png",
-      thunderstorm: "../src/assets/storm.png",
-      741: "../src/assets/fog.png",
+      clouds: cloudy,
+      clear: sunny,
+      snow: snow,
+      rain: rain,
+      thunderstorm: storm,
+      741: fog,
     };
 
     const nightPaths = {
-      clouds: "../src/assets/night-cloudy.png",
-      clear: "../src/assets/night.png",
-      snow: "../src/assets/night-snow.png",
-      rain: "../src/assets/night-rain.png",
-      thunderstorm: "../src/assets/night-storm.png",
-      741: "../src/assets/night-fog.png",
+      clouds: nightCloudy,
+      clear: night,
+      snow: nightSnow,
+      rain: nightRain,
+      thunderstorm: nightStorm,
+      741: nightFog,
     };
 
     const path = isDay
