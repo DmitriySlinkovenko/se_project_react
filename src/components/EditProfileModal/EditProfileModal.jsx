@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 import { useState } from "react";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
@@ -12,6 +12,13 @@ export default function EditProfileModal({
   const [name, setName] = useState("");
   const [avatar, setAvatar] = useState("");
 
+  useEffect(() => {
+    if (currentUser.name) {
+      setName(currentUser.name);
+      setAvatar(currentUser.avatar);
+    }
+  }, [currentUser]);
+
   function handleNameChange(e) {
     setName(e.target.value);
   }
@@ -22,8 +29,6 @@ export default function EditProfileModal({
   function handleEditProfile(e) {
     e.preventDefault();
     handleEditProfileSubmit({ name, avatar });
-    setName("");
-    setAvatar("");
   }
   return (
     <>
@@ -37,7 +42,6 @@ export default function EditProfileModal({
         <label className="form__label">
           Name*
           <input
-            defaultValue={currentUser.name}
             type="text"
             name="name"
             onChange={handleNameChange}

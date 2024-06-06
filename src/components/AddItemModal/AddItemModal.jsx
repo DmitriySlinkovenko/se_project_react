@@ -17,7 +17,6 @@ const AddItemModal = ({ isOpen, handleAddItemSubmit, onCloseModal }) => {
   const handleWeatherTypeChange = (e) => {
     setWeather(e.target.value);
   };
-
   const handleSubmit = (e) => {
     e.preventDefault();
     handleAddItemSubmit({ name, imageUrl, weather });
@@ -73,6 +72,7 @@ const AddItemModal = ({ isOpen, handleAddItemSubmit, onCloseModal }) => {
           required={true}
           className="radio__btn"
           onChange={handleWeatherTypeChange}
+          checked={weather === "hot"}
         />
         <span className="radio-btn__title">Hot</span>
       </label>
@@ -84,6 +84,7 @@ const AddItemModal = ({ isOpen, handleAddItemSubmit, onCloseModal }) => {
           className="radio__btn"
           value="warm"
           required={true}
+          checked={weather === "warm"}
           onChange={handleWeatherTypeChange}
         />
         <span className="radio-btn__title">Warm</span>
@@ -96,6 +97,7 @@ const AddItemModal = ({ isOpen, handleAddItemSubmit, onCloseModal }) => {
           id="weather-type-cold"
           className="radio__btn"
           value="cold"
+          checked={weather === "cold"}
           onChange={handleWeatherTypeChange}
         />
         <span className="radio-btn__title">Cold</span>

@@ -100,7 +100,8 @@ function App() {
     const jwt = getToken();
     addItem(data, jwt)
       .then((item) => {
-        setClothingItems([item, ...clothingItems]);
+        setClothingItems([item.item, ...clothingItems]);
+        console.log(item);
         handleModalClose();
       })
       .catch(console.error);
