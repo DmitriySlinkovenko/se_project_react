@@ -17,7 +17,7 @@ import {
   addCardLike,
   removeCardLike,
 } from "../../utils/api.js";
-import { signIn, signUp, checkToken, updateProfile } from "../../utils/auth.js";
+import { signIn, signUp, updateProfile, checkToken } from "../../utils/auth.js";
 import LoginFormModal from "../LoginFormModal/LoginFormModal.jsx";
 import RegisterModal from "../RegisterModal/RegisterModal.jsx";
 import ProtectedRoute from "../ProtectedRoute/ProtectedRoute.jsx";
@@ -115,15 +115,18 @@ function App() {
       .then((res) => {
         if (res.token) {
           setToken(res.token);
-          setCurrentUser(res.user);
-          setIsLoggedIn(true);
-          const redirectPath = location.state?.from?.pathname || "/";
-          navigate(redirectPath);
-          handleModalClose();
+          checkToken(res.token).then((res) => {
+            setCurrentUser(res);
+            setIsLoggedIn(true);
+            const redirectPath = location.state?.from?.pathname || "/";
+            navigate(redirectPath);
+            handleModalClose();
+          });
         }
       })
       .catch((err) => console.error(err.message));
   };
+
   useEffect(() => {
     const jwt = getToken();
 
@@ -133,8 +136,8 @@ function App() {
 
     checkToken(jwt)
       .then((data) => {
-        setIsLoggedIn(true);
         setCurrentUser(data);
+        setIsLoggedIn(true);
       })
       .catch((err) => {
         console.error(err);
@@ -154,7 +157,6 @@ function App() {
     const token = getToken();
     updateProfile(token, { name, avatar })
       .then((res) => {
-        console.log(res);
         setCurrentUser(res);
         handleModalClose();
       })
@@ -200,8 +202,8 @@ function App() {
   };
 
   return (
-    <div className="page">
-      <CurrentUserContext.Provider value={currentUser}>
+    <CurrentUserContext.Provider value={currentUser}>
+      <div className="page">
         <CurrentTemperatureUnitContext.Provider
           value={{ currentTemperatureUnit, handleToggleSwitchChange }}
         >
@@ -268,8 +270,8 @@ function App() {
             handleEditProfileSubmit={handleEditProfileSubmit}
           ></EditProfileModal>
         </CurrentTemperatureUnitContext.Provider>
-      </CurrentUserContext.Provider>
-    </div>
+      </div>
+    </CurrentUserContext.Provider>
   );
 }
 

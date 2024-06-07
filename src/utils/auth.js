@@ -29,8 +29,9 @@ export function checkToken(token) {
       "Content-Type": "application/json",
       Authorization: `Bearer ${token}`,
     },
-  }).then((res) => checkResponse(res));
+  }).then(checkResponse);
 }
+
 export function updateProfile(token, { name, avatar }) {
   return fetch(`${baseUrl}/users/me`, {
     method: "PATCH",

@@ -23,7 +23,7 @@ function addItem({ name, weather, imageUrl }, token) {
       weather,
       imageUrl,
     }),
-  }).then((res) => checkResponse(res));
+  }).then(checkResponse);
 }
 
 function removeItem(id, token) {
