@@ -113,3 +113,10 @@
 .modal_opened {
   visibility: visible;
 }
+
+@media screen and (max-width: 760px) {
+  .modal__container {
+    width: 375px;
+    height: auto;
+  }
+}

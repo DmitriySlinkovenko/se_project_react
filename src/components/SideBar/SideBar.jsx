@@ -14,10 +14,10 @@ export default function SideBar({ handleEditProfileClick, handleLogout }) {
       />
       <p className="sidebar__username">{currentUser.name}</p>
       <div className="button__container">
-        <button className="button" onClick={handleEditProfileClick}>
+        <button className="sidebar__button" onClick={handleEditProfileClick}>
           Change Profile Data
         </button>
-        <button className="button" onClick={handleLogout}>
+        <button className="sidebar__button" onClick={handleLogout}>
           Log Out
         </button>
       </div>

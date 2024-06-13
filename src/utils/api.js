@@ -1,7 +1,7 @@
-export const baseUrl =
-  process.env.NODE_ENV === "production"
+export const baseUrl = "https://api.wtwr.root.sx";
+/*process.env.NODE_ENV === "production"
     ? "https://api.wtwr.root.sx"
-    : "http://localhost:3001";
+    : "http://localhost:3001";*/
 
 const checkResponse = (res) => {
   return res.ok ? res.json() : Promise.reject(`Error: ${res.status}`);

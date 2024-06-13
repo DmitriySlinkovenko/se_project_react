@@ -47,3 +47,22 @@
 .item-card__like-btn_liked {
   background-image: url(../../assets/State=Liked.png);
 }
+
+@media screen and (max-width: 760px) {
+  .item-card__container {
+    width: 164px;
+    height: 164px;
+  }
+
+  .item-card__image {
+    width: 164px;
+    height: 164px;
+  }
+
+  .item-card__like-btn {
+    bottom: 160px;
+  }
+  .item-card__title {
+    bottom: 160px;
+  }
+}

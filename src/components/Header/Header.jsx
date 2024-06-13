@@ -2,7 +2,7 @@ import "./Header.css";
 import headerLogo from "../../assets/Logo.png";
 import ToggleSwitch from "../../components/ToggleSwitch/ToggleSwitch";
 import { Link } from "react-router-dom";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 
 function Header({
@@ -17,6 +17,17 @@ function Header({
     month: "long",
     day: "numeric",
   });
+  const [isMobileMenuOpened, setIsMobileMenuOpened] = useState(false);
+  const mobileView = `mobile-nav ${
+    isMobileMenuOpened ? "mobile-nav_active" : ""
+  }`;
+  const mobileButtonView = `mobile-button ${
+    isMobileMenuOpened ? "mobile-button_active" : ""
+  }`;
+
+  const openMobileMenu = () => {
+    setIsMobileMenuOpened(!isMobileMenuOpened);
+  };
 
   return isLoggedIn ? (
     <header className="header__container">
@@ -49,21 +60,32 @@ function Header({
       </Link>
     </header>
   ) : (
-    <header className="header__container">
-      <Link to="/">
-        <img src={headerLogo} alt="Header logo" className="header__logo" />
-      </Link>
-      <p className="header__date">
-        {currentDate}, {weatherData.city}
-      </p>
-      <ToggleSwitch />
+    <header className="header">
+      <div className="header__container">
+        <Link to="/">
+          <img src={headerLogo} alt="Header logo" className="header__logo" />
+        </Link>
+        <p className="header__date">
+          {currentDate}, {weatherData.city}
+        </p>
+        <ToggleSwitch />
 
-      <button className="button" onClick={handleRegisterClick}>
-        Sign Up
-      </button>
-      <button className="button" onClick={handleLoginClick}>
-        Log In
-      </button>
+        <div className={mobileView} onClick={openMobileMenu}>
+          <button className={mobileButtonView} onClick={handleRegisterClick}>
+            Sign Up
+          </button>
+          <button className={mobileButtonView} onClick={handleLoginClick}>
+            Log In
+          </button>
+        </div>
+
+        <button className="button" onClick={handleRegisterClick}>
+          Sign Up
+        </button>
+        <button className="button" onClick={handleLoginClick}>
+          Log In
+        </button>
+      </div>
     </header>
   );
 }

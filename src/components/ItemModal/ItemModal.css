@@ -81,3 +81,14 @@
 .item-modal__delete-btn_visible {
   opacity: 1;
 }
+
+@media screen and (max-width: 760px) {
+  .item-modal__container {
+    width: 343px;
+    height: 463px;
+  }
+  .item-modal__image {
+    width: 343px;
+    height: 343px;
+  }
+}

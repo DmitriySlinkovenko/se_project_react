@@ -34,3 +34,14 @@
 .cards__list {
   max-width: 1021px;
 }
+
+@media screen and (max-width: 760px) {
+  .section__container {
+    margin: 32px 0 0;
+  }
+  .cards__list {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+  }
+}

@@ -3,3 +3,10 @@
   flex-wrap: nowrap;
   margin: 47px auto 86px;
 }
+
+@media screen and (max-width: 760px) {
+  .profile {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+}

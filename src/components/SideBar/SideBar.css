@@ -31,3 +31,23 @@
   flex-direction: column;
   gap: 8px;
 }
+
+.sidebar__button {
+  font-family: "Cabinet Grotesk", Arial, sans-serif;
+  font-size: 20px;
+  line-height: 1.2;
+  font-weight: 700;
+  border: none;
+  text-align: left;
+}
+
+@media screen and (max-width: 760px) {
+  .sidebar {
+    margin-top: 32px;
+    max-width: 100%;
+  }
+  .sidebar__username {
+    overflow: hidden;
+    width: 70%;
+  }
+}
