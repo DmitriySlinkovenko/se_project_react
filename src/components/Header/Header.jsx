@@ -71,18 +71,26 @@ function Header({
         <ToggleSwitch />
 
         <div className={mobileView} onClick={openMobileMenu}>
-          <button className={mobileButtonView} onClick={handleRegisterClick}>
+          <button
+            type="button"
+            className={mobileButtonView}
+            onClick={handleRegisterClick}
+          >
             Sign Up
           </button>
-          <button className={mobileButtonView} onClick={handleLoginClick}>
+          <button
+            type="button"
+            className={mobileButtonView}
+            onClick={handleLoginClick}
+          >
             Log In
           </button>
         </div>
 
-        <button className="button" onClick={handleRegisterClick}>
+        <button type="button" className="button" onClick={handleRegisterClick}>
           Sign Up
         </button>
-        <button className="button" onClick={handleLoginClick}>
+        <button type="button" className="button" onClick={handleLoginClick}>
           Log In
         </button>
       </div>
