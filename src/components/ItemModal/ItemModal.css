@@ -42,7 +42,7 @@
 .item-modal__close-btn {
   position: absolute;
   background-image: url(../../assets/close-btn-white.png);
-  background-color: transparent;
+  background-color: red;
   background-repeat: no-repeat;
   background-size: contain;
   width: 16px;

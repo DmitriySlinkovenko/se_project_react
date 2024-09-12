@@ -21,6 +21,7 @@ function WeatherCard({ weatherData }) {
   const weatherId = weatherData.id;
   const isDay = weatherData.isDay;
   const { currentTemperatureUnit } = useContext(CurrentTemperatureUnitContext);
+  console.log(condition);
 
   function handleBackgroundImage(condition, weatherId, isDay) {
     const dayPaths = {
@@ -31,6 +32,10 @@ function WeatherCard({ weatherData }) {
       thunderstorm: storm,
       741: fog,
     };
+
+    if (condition == "smoke") {
+      return dayPaths.clear;
+    }
 
     const nightPaths = {
       clouds: nightCloudy,
