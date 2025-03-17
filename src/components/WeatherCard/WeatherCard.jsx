@@ -18,6 +18,7 @@ function WeatherCard({ weatherData }) {
   const tempDisplayF = `${weatherData.temp.F} °F`;
   const tempDisplayC = `${((weatherData.temp.F - 32) / (9 / 5)).toFixed(1)} °C`;
   const condition = weatherData.condition;
+  console.log(condition);
   const weatherId = weatherData.id;
   const isDay = weatherData.isDay;
   const { currentTemperatureUnit } = useContext(CurrentTemperatureUnitContext);
@@ -32,10 +33,6 @@ function WeatherCard({ weatherData }) {
       741: fog,
     };
 
-    if (condition == "smoke") {
-      return dayPaths.clear;
-    }
-
     const nightPaths = {
       clouds: nightCloudy,
       clear: night,
@@ -44,6 +41,12 @@ function WeatherCard({ weatherData }) {
       thunderstorm: nightStorm,
       741: nightFog,
     };
+
+    if (condition == "smoke" || (condition == "mist" && isDay)) {
+      return dayPaths.clear;
+    } else {
+      nightPaths.clear;
+    }
 
     const path = isDay
       ? dayPaths[condition]

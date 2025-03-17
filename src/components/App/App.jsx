@@ -101,7 +101,6 @@ function App() {
     addItem(data, jwt)
       .then((item) => {
         setClothingItems([item.item, ...clothingItems]);
-        console.log(item);
         handleModalClose();
       })
       .catch(console.error);
